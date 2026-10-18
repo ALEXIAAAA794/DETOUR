@@ -19,14 +19,40 @@ const server = http.createServer((req, res) => {
 
   if (req.method === "POST" && req.url === "/api/support/messages") {
   let corps = "";
+  let tailleRecue = 0;
+  let corpsTropGrand = false;
+  const tailleMaximale = 16 * 1024;
 
   req.setEncoding("utf8");
 
   req.on("data", (morceau) => {
-    corps += morceau;
-  });
+  if (corpsTropGrand) {
+    return;
+  }
+
+  tailleRecue += Buffer.byteLength(morceau, "utf8");
+
+  if (tailleRecue > tailleMaximale) {
+    corpsTropGrand = true;
+    corps = "";
+
+    envoyerJSON(res, 413, {
+      error: {
+        code: "PAYLOAD_TOO_LARGE",
+        message: "Le corps de la requête dépasse la limite de 16 Kio."
+      }
+    });
+
+    return;
+  }
+
+  corps += morceau;
+});
 
   req.on("end", () => {
+    if (corpsTropGrand) {
+  return;
+}
   let donnees;
 
   try {

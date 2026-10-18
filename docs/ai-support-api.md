@@ -59,6 +59,7 @@ POST /api/support/messages
   en début et fin.
 - Le serveur récupère lui-même l'historique.
 - Le navigateur ne fournit ni userId, ni rôle, ni instructions système.
+- La taille totale du corps JSON est limitée à 16 384 octets (16 Kio).
 
 ### Réponse — HTTP 200
 
@@ -175,6 +176,7 @@ Réponse : HTTP 204, sans corps.
 | 400 | INVALID_REQUEST | Identifiant ou paramètres de pagination invalides |
 | 401 | UNAUTHENTICATED | Identité vérifiée absente ou invalide |
 | 404 | CONVERSATION_NOT_FOUND | Conversation absente, expirée ou inaccessible |
+| 413 | PAYLOAD_TOO_LARGE | Corps de requête supérieur à 16 Kio |
 | 429 | RATE_LIMITED | Limite de demandes atteinte |
 | 503 | AI_UNAVAILABLE | Fournisseur IA indisponible ou réponse inexploitable |
 | 500 | INTERNAL_ERROR | Erreur interne inattendue |

@@ -39,6 +39,14 @@ Vérifications manuelles réalisées :
 - 2 000 lettres ASCII : acceptées.
 - 2 001 lettres ASCII : refusées.
 
+## Limite du corps de requête
+
+- Le corps reçu est limité à 16 384 octets (16 Kio).
+- Le dépassement renvoie HTTP 413 avec PAYLOAD_TOO_LARGE.
+- Le serveur cesse alors de conserver les morceaux suivants.
+- Test manuel : corps supérieur à 16 Kio refusé,
+  puis message normal accepté sans redémarrage du serveur.
+
 Cette route locale est une étape de développement.
-La limite de taille totale du corps, la gestion des erreurs de réception,
+La gestion des erreurs de réception,
 l'authentification et la réponse de l'assistant restent à implémenter.
