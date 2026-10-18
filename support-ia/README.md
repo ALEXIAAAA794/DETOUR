@@ -63,3 +63,12 @@ si le flux de réponse le permet.
 
 Une requête normale a été vérifiée après cet ajout.
 Le cas d'une connexion interrompue reste à tester.
+
+## Connaissances du support
+
+- knowledge/faq.json contient les questions-réponses de référence.
+- knowledge/instructions.md définit le comportement de l'assistant,
+  notamment la réponse dans la langue de l'utilisateur.
+- Ces fichiers sont chargés au démarrage du serveur.
+- Toute modification nécessite un redémarrage.
+- Ils ne sont pas encore transmis à Gemini.

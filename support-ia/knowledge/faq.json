@@ -1,0 +1,50 @@
+[
+  {
+    "id": "service-presentation",
+    "category": "service",
+    "question": "À quoi sert DÉTOUR ?",
+    "answer": "DÉTOUR permet de soumettre une demande de voyage. Le gestionnaire étudie sa faisabilité avant de confirmer la proposition."
+  },
+  {
+    "id": "demande-parcours",
+    "category": "demande",
+    "question": "Comment demander un voyage ?",
+    "answer": "Connectez-vous au site, puis utilisez le formulaire de demande de service pour transmettre votre demande de voyage."
+  },
+  {
+    "id": "demande-traitement",
+    "category": "demande",
+    "question": "Que se passe-t-il après l'envoi de ma demande ?",
+    "answer": "Le gestionnaire reçoit votre demande et vérifie sa faisabilité. Une confirmation vous est ensuite envoyée par e-mail si la proposition peut être réalisée."
+  },
+  {
+    "id": "paiement-moment",
+    "category": "paiement",
+    "question": "Quand intervient le paiement ?",
+    "answer": "Le paiement intervient après la vérification de faisabilité et la confirmation du gestionnaire. Le support IA ne peut pas confirmer lui-même une réservation."
+  },
+  {
+    "id": "paiement-verification",
+    "category": "paiement",
+    "question": "Pouvez-vous vérifier si mon paiement est passé ?",
+    "answer": "Le support IA n'a pas accès aux paiements réels. Une vérification de votre paiement nécessite l'intervention du gestionnaire."
+  },
+  {
+    "id": "support-capacites",
+    "category": "support",
+    "question": "Que peut faire le support IA ?",
+    "answer": "Le support IA explique le fonctionnement du service et les démarches décrites dans sa documentation. Il ne consulte ni ne modifie les réservations et ne réalise aucun paiement."
+  },
+  {
+    "id": "support-langues",
+    "category": "support",
+    "question": "Puis-je poser ma question dans une autre langue ?",
+    "answer": "Vous pouvez écrire dans votre langue et demander une réponse dans la langue de votre choix. Si votre demande est ambiguë, le support peut vous demander une précision."
+  },
+  {
+    "id": "conditions-inconnues",
+    "category": "conditions",
+    "question": "Quelles sont les conditions d'annulation et de remboursement ?",
+    "answer": "Les conditions d'annulation et de remboursement ne sont pas encore renseignées dans la documentation du support. Le gestionnaire doit vous les préciser avant tout engagement."
+  }
+]

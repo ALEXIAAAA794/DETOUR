@@ -1,4 +1,15 @@
 const http = require("node:http");
+
+const fs = require("node:fs");
+const path = require("node:path");
+
+const faq = require("./knowledge/faq.json");
+
+const instructions = fs.readFileSync(
+  path.join(__dirname, "knowledge", "instructions.md"),
+  "utf8"
+);
+
 function envoyerJSON(res, statut, donnees) {
   res.statusCode = statut;
   res.setHeader("Content-Type", "application/json; charset=utf-8");

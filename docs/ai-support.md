@@ -37,7 +37,10 @@ Le bloc comprend :
 
 ## Comportement attendu
 
-- Répondre en français, clairement et poliment.
+- Répondre clairement et poliment dans la langue de l'utilisateur.
+- Respecter toute demande explicite de changement de langue.
+- Pour un message ambigu, conserver la langue de la conversation.
+- Demander une précision si la langue souhaitée est indéterminable.
 - S'appuyer sur la FAQ pour les informations concernant DÉTOUR.
 - Signaler lorsqu'une information manque.
 - Recentrer les questions sans rapport avec le service.
