@@ -25,6 +25,21 @@ const server = http.createServer((req, res) => {
 
   req.setEncoding("utf8");
 
+  req.on("error", (erreur) => {
+  corps = "";
+
+  console.error("Erreur pendant la réception :", erreur.message);
+
+  if (!res.headersSent && !res.destroyed) {
+    envoyerJSON(res, 400, {
+      error: {
+        code: "INVALID_REQUEST",
+        message: "La réception de la requête a échoué."
+      }
+    });
+  }
+});
+
   req.on("data", (morceau) => {
   if (corpsTropGrand) {
     return;
@@ -95,9 +110,12 @@ if (message.length === 0 || message.length > 2000) {
 }
 
   envoyerJSON(res, 200, {
-  status: "validated",
-  receivedMessage: message
-  });
+  reply: {
+    role: "assistant",
+    content: "Votre message a bien été reçu : " + message
+  },
+  needsHumanSupport: false
+});
 });
 
   return;

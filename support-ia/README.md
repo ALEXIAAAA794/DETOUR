@@ -29,7 +29,11 @@ La route POST /api/support/messages :
 - Retire les espaces au début et à la fin.
 - Accepte une longueur comprise entre 1 et 2 000 unités UTF-16,
   mesurée avec JavaScript String.length.
-- Renvoie provisoirement status: "validated" et receivedMessage.
+- Renvoie une réponse factice dans reply avec role et content,
+  ainsi que needsHumanSupport: false.
+- Cette réponse est construite localement, sans appel à Gemini.
+- Les identifiants de conversation et de message ne sont pas
+  encore implémentés.
 
 Vérifications manuelles réalisées :
 - JSON invalide : refusé avec INVALID_REQUEST.
@@ -49,4 +53,13 @@ Vérifications manuelles réalisées :
 
 Cette route locale est une étape de développement.
 La gestion des erreurs de réception,
-l'authentification et la réponse de l'assistant restent à implémenter.
+l'authentification et la réponse générée par Gemini.
+
+## Erreurs de réception
+
+Un gestionnaire de l'événement error est présent sur la requête.
+Il journalise l'erreur côté serveur et tente une réponse HTTP 400
+si le flux de réponse le permet.
+
+Une requête normale a été vérifiée après cet ajout.
+Le cas d'une connexion interrompue reste à tester.
