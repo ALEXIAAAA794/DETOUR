@@ -72,3 +72,14 @@ Le cas d'une connexion interrompue reste à tester.
 - Ces fichiers sont chargés au démarrage du serveur.
 - Toute modification nécessite un redémarrage.
 - Ils ne sont pas encore transmis à Gemini.
+
+## Connexion à Gemini — en cours
+
+- Clé API chargée côté serveur depuis un fichier `.env` ignoré par Git.
+- Appel à Gemini implémenté dans `gemini.js`.
+- Gestion des statuts HTTP en erreur et des réponses sans texte.
+- Délai maximal de la requête : 60 secondes.
+- Premier test manuel de génération réussi.
+
+La FAQ, les instructions et le catalogue ne sont pas encore transmis
+au modèle. La fonction n’est pas encore reliée à la route HTTP.
